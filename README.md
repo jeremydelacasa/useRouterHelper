@@ -5,19 +5,19 @@ useRouter is a hook for react and work with [react-router-dom](https://v5.reactr
 ## Installation
 
 ```bash
-npm install use-router
+npm install use-router-helper
 ```
 
 or
 
 ```bash
-yarn add use-router
+yarn add use-router-helper
 ```
 
 ## Usage
 
 ```javascript
-import useRouter from "use-router";
+import useRouter from "use-router-helper";
 import getDataService from "myCustomGetDataService";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Redirect, Route, Switch } from "react-router-dom";
