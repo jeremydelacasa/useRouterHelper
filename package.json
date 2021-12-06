@@ -1,6 +1,6 @@
 {
   "name": "use-router-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React hook for react-router-dom",
   "source": "src/index.js",
   "main": "dist/main.js",
