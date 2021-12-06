@@ -1,6 +1,6 @@
 # useRouter
 
-useRouter is a hook for react and work with react-router-dom. It improves the functional navigation and adds features in the use of searchParams.
+useRouter is a hook for react and work with [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start). It improves the functional navigation and adds features to the use of searchParams.
 
 ## Installation
 
@@ -11,7 +11,7 @@ npm install use-router
 or
 
 ```bash
-yarn add useRouter
+yarn add use-router
 ```
 
 ## Usage
@@ -60,11 +60,11 @@ const CustomComponent = () => {
 };
 ```
 
-# Api
+## Api
 
-## updateSearchParams
+### updateSearchParams: function
 
-### Params
+#### Params
 
 **url: string**
 
@@ -76,7 +76,7 @@ url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-s
 
 default 'push'
 
-#### Example :
+##### Example :
 
 ```js
 // url = /list?order=DESC&page=3
@@ -84,9 +84,9 @@ updateSearchParams({ order: "ASC" });
 // url = /list?order=ASC&page=3
 ```
 
-## replaceSearchParams
+### replaceSearchParams: function
 
-### Params
+#### Params
 
 **url: string**
 
@@ -98,7 +98,7 @@ url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-s
 
 default 'push'
 
-#### Example :
+##### Example :
 
 ```js
 // url = /list?order=DESC&page=3
@@ -106,9 +106,9 @@ replaceSearchParams({ page: 0 });
 // url = /list?page=0
 ```
 
-## deleteSearchParams
+### deleteSearchParams: function
 
-### Params
+#### Params
 
 **keys: array**
 
@@ -120,17 +120,19 @@ deleted search param keys
 
 default 'push'
 
+##### Example :
+
 ```js
 // url = /list?order=DESC&page=3
 deleteSearchParams(["page"]);
 // url = /list?order=DESC
 ```
 
-## push
+### push: function
 
 Push new url on the browser history (https://v5.reactrouter.com/web/api/history)
 
-### Params
+#### Params
 
 **url: string**
 
@@ -141,7 +143,7 @@ url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-s
 - params: object
 - params: searchParams
 
-#### Example :
+##### Example :
 
 ```js
 // url = /list
@@ -157,11 +159,11 @@ push("/item/:id", { params: { id: 1 }, searchParams: { lang: "FR" } });
 // url = /item/1?lang=FR
 ```
 
-## replace
+### replace: function
 
 Replace the current url on the browser history (https://v5.reactrouter.com/web/api/history)
 
-### Params
+#### Params
 
 **url: string**
 
@@ -172,7 +174,7 @@ url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-s
 - params: object
 - params: searchParams
 
-#### Example :
+##### Example :
 
 ```js
 // url = /list
@@ -191,7 +193,7 @@ replace("/item/:id", {
 // url = /item/1?lang=FR
 ```
 
-## params: object
+### params: object
 
 Object of params url
 
@@ -203,7 +205,7 @@ console.log(params);
 // log => {id : 2}
 ```
 
-## searchParams: object
+### searchParams: object
 
 Object of searchParams url
 
@@ -215,6 +217,6 @@ console.log(searchParams);
 // log => {order : "ASC", page: 3}
 ```
 
-## location
+### location: object
 
 Result of useLocation hook from react-router-dom (https://v5.reactrouter.com/web/api/Hooks/uselocation)
