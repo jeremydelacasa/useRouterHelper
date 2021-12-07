@@ -1,6 +1,6 @@
-# useRouter
+# useRouterHelper
 
-useRouter is a hook for react and work with [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start). It improves the functional navigation and adds features to the use of searchParams.
+useRouterHelper is a hook for react and work with [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start). It improves the functional navigation and adds features to the use of searchParams.
 
 ## Installation
 
@@ -19,8 +19,12 @@ yarn add use-router-helper
 ```javascript
 import useRouter from "use-router-helper";
 import getDataService from "myCustomGetDataService";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Redirect, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 
 const App = () => (
   <Router>
@@ -37,14 +41,15 @@ const CustomComponent = () => {
   const { searchParams, updateSearchParams } = useRouter();
   const [data, setData] = useState();
 
+  const { order = "ASC" } = searchParams;
+
   const handleOrder = (order) => {
     updateSearchParams({ order });
   };
 
   useEffect(() => {
-    const newData = getDataService({ order: searchParams?.order });
-    setData(newData);
-  }, [searchParams]);
+    setData(getDataService({ order }));
+  }, [order]);
 
   return (
     <div>
