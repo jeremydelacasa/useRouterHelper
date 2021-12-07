@@ -1,9 +1,10 @@
 {
   "name": "use-router-helper",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "React hook for react-router-dom",
   "source": "src/index.js",
   "main": "dist/main.js",
+  "homepage": "https://github.com/jeremydelacasa/useRouterHelper",
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build",
