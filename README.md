@@ -19,12 +19,8 @@ yarn add use-router-helper
 ```javascript
 import useRouter from "use-router-helper";
 import getDataService from "myCustomGetDataService";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const App = () => (
   <Router>
@@ -64,6 +60,10 @@ const CustomComponent = () => {
   );
 };
 ```
+
+## Example
+
+https://codesandbox.io/embed/old-bush-rgviz?fontsize=14&theme=dark
 
 ## Api
 
