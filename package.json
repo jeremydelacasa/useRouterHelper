@@ -1,6 +1,6 @@
 {
   "name": "use-router-helper",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "React hook for react-router-dom",
   "source": "src/index.js",
   "main": "dist/main.js",
@@ -9,7 +9,7 @@
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build",
-    "publish": "npm run build && npm publish --access public"
+    "publish": "npm install && npm run build && npm publish --access public"
   },
   "author": "jeremydelacasa",
   "license": "ISC",
@@ -20,5 +20,16 @@
   "devDependencies": {
     "parcel": "^2.0.1"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "keywords": [
+    "react-router-dom",
+    "react-router",
+    "search",
+    "query",
+    "searchparams",
+    "searchquery",
+    "url",
+    "pathname",
+    "react"
+  ]
 }
