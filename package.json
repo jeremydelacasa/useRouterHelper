@@ -1,6 +1,6 @@
 {
   "name": "use-router-helper",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "React hook for react-router-dom",
   "source": "src/index.js",
   "main": "dist/main.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build",
-    "publish": "npm publish --access public"
+    "publish": "npm run build && npm publish --access public"
   },
   "author": "jeremydelacasa",
   "license": "ISC",
