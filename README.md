@@ -78,6 +78,7 @@ url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-s
 **opts: object** - _optionnal_
 
 - stack: 'push'|'replace'
+- state: object
 
 default 'push'
 
@@ -100,6 +101,7 @@ url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-s
 **opts: object** - _optionnal_
 
 - stack: 'push'|'replace'
+- state: object
 
 default 'push'
 
@@ -122,6 +124,7 @@ deleted search param keys
 **opts: object** - _optionnal_
 
 - stack: 'push'|'replace'
+- state: object
 
 default 'push'
 
@@ -146,7 +149,8 @@ url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-s
 **opts: object** - _optionnal_
 
 - params: object
-- params: searchParams
+- searchParams: object
+- state: object
 
 ##### Example :
 
@@ -177,13 +181,14 @@ url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-s
 **opts: object** - _optionnal_
 
 - params: object
-- params: searchParams
+- searchParams: object
+- state: object
 
 ##### Example :
 
 ```js
 // url = /list
-push("/item/1?lang=FR");
+replace("/item/1?lang=FR");
 // url = /item/1?lang=FR
 ```
 

@@ -11,24 +11,36 @@ const useRouter = () => {
   const params = useParams();
   const location = useLocation();
 
-  const updateSearchParams = (newParams = {}, { stack = "push" } = {}) => {
+  const defaultState = {
+    from: `${location.pathname}${location.search}`,
+  };
+
+  const updateSearchParams = (
+    newParams = {},
+    { stack = "push", state } = {}
+  ) => {
     history[stack](
       `${location.pathname}${generateSearchParamsString({
         ...searchParams,
         ...newParams,
-      })}`
+      })}`,
+      { ...defaultState, ...state }
     );
   };
 
-  const replaceSearchParams = (newParams = {}, { stack = "push" } = {}) => {
+  const replaceSearchParams = (
+    newParams = {},
+    { stack = "push", state } = {}
+  ) => {
     history[stack](
-      `${location.pathname}${generateSearchParamsString(newParams)}`
+      `${location.pathname}${generateSearchParamsString(newParams)}`,
+      { ...defaultState, ...state }
     );
   };
 
   const deleteSearchParams = (
     deleteParamList = [],
-    { stack = "push" } = {}
+    { stack = "push", state } = {}
   ) => {
     history[stack](
       `${location.pathname}${generateSearchParamsString(
@@ -39,31 +51,37 @@ const useRouter = () => {
               : { ...acc, [cur]: searchParams[cur] },
           {}
         )
-      )}`
+      )}`,
+      { ...defaultState, ...state }
     );
   };
 
   const push = (
     url,
-    { params: paramsPushed = {}, searchParams: searchParamsPushed = {} } = {}
+    { params: paramsPushed = {}, searchParams: searchParamsPushed, state } = {}
   ) => {
     history.push(
-      `${generatePath(url, paramsPushed)}${generateSearchParamsString(
-        searchParamsPushed
-      )}`
+      `${generatePath(url, paramsPushed)}${
+        searchParamsPushed ? generateSearchParamsString(searchParamsPushed) : ""
+      }`,
+      { ...defaultState, ...state }
     );
   };
   const replace = (
     url,
     {
       params: paramsReplaced = {},
-      searchParams: searchParamsReplaced = {},
+      searchParams: searchParamsReplaced,
+      state,
     } = {}
   ) => {
     history.replace(
-      `${generatePath(url, paramsReplaced)}${generateSearchParamsString(
+      `${generatePath(url, paramsReplaced)}${
         searchParamsReplaced
-      )}`
+          ? generateSearchParamsString(searchParamsReplaced)
+          : ""
+      }`,
+      { ...defaultState, ...state }
     );
   };
 
