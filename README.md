@@ -71,9 +71,9 @@ https://codesandbox.io/embed/old-bush-rgviz?fontsize=14&theme=dark
 
 #### Params
 
-**url: string**
+**newSearchParams: object**
 
-url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-string)
+object of new search params
 
 **opts: object** - _optionnal_
 
@@ -94,9 +94,9 @@ updateSearchParams({ order: "ASC" });
 
 #### Params
 
-**url: string**
+**newSearchParams: object**
 
-url or path template url (https://v5.reactrouter.com/web/api/Route/path-string-string)
+object of new search params
 
 **opts: object** - _optionnal_
 
